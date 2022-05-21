@@ -2,16 +2,17 @@
 write-host "`n종료시간을 입력해주세요. 예) 20220520 1500" -ForegroundColor Yellow
 write-host "`n경고: 현재 시간보다 과거 입력시 컴퓨터가 즉시 종료됩니다." -ForegroundColor Red
 write-host "작업중인 문서는 꼭 저장하고 사용하세요`n" -ForegroundColor Red
-$input=Read-host "입력값: "
+$inp = Read-host "입력값: "
+
 try {
-    $end = [Datetime]::ParseExact($input, 'yyyyMMdd HHmm', $null)
+    $end = [Datetime]::ParseExact($inp, 'yyyyMMdd HHmm', $null)
     $endStr = $end.ToString("yyyy년 MM월 dd일 HH시 mm분")
     while ($true) {
-        clear
+        Clear-Host
         if ((Get-Date) -ge $end) {
             Stop-Computer -ComputerName localhost -Force
             # write-host "컴퓨터를 종료합니다..." 
-        return
+            return
         }
         else {
             write-host "================================================================================================`n"
@@ -24,5 +25,6 @@ try {
     }
 }
 catch {
-    Write-Host "입력값이 정확하지 않습니다. powershell.bat을 다시 실행해주세요" -ForegroundColor Yellow
+    Write-Host "입력값이 정확하지 않습니다. 프로그램을 다시 실행해주세요" -ForegroundColor Yellow
+    Start-Sleep 3
 }
