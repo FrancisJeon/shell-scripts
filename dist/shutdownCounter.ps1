@@ -11,14 +11,13 @@ try {
         Clear-Host
         if ((Get-Date) -ge $end) {
             Stop-Computer -ComputerName localhost -Force
-            # write-host "컴퓨터를 종료합니다..." 
             return
         }
         else {
             write-host "================================================================================================`n"
-            write-host "`t`t종료 시간 : $endStr" -ForegroundColor Red
+            write-host "`t`t종료 시간: $endStr" -ForegroundColor Red
             $remain = New-TimeSpan -Start (Get-Date) -End $end
-            write-host "`t`t남은시간:" $remain.Days"일"$remain.Hours"시간"$remain.Minutes"분"$remain.Seconds"초 (취소하려면 Ctrl+C를 눌러주세요)" -ForegroundColor Yellow
+            write-host "`t`t남은 시간:" $remain.Days"일"$remain.Hours"시간"$remain.Minutes"분"$remain.Seconds"초 (취소하려면 Ctrl+C를 눌러주세요)" -ForegroundColor Yellow
             write-host "`n================================================================================================"
         }
         Start-Sleep 1
