@@ -8,7 +8,7 @@
 * setup_pkg() 함수 뜯어보기  
     * if문 brew가 없다면 brew를 설치해준다.
     * PACKAGES 변수에 brew에 담아줄 패키지들을 전부 적어준 다음 (컴마 없이 한줄씩 적어주었다.)
-    * brew install ${PACKAGES[@]} 로 패키지들 전부 설치
+    * brew install ${PACKAGES[@]} 로 PACKAGES array의 모든 원소 설치
     * APPLICATIONS 변수에 사용할 어플리케이션 목록 담아준 다음 install --cask로 설치
     * 폰트 관리도 해준다. 원하는 폰트들 담아두면 전부 받아온다.
 * 코드 질문...  

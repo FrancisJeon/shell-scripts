@@ -73,14 +73,14 @@ setup_osx_system()
 {
     echo "Configuring OSX..."
     # Show filename extensions by default
-    defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+    defaults write NSGlobalDomain AppleShowAllExtensions -bool TRUE
 
     # Enable tap-to-click
-    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool TRUE
     defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
     # Make dock faster
-    defaults write com.apple.dock autohide -bool true;killall Dock
+    defaults write com.apple.dock autohide -bool TRUE;killall Dock
     defaults write com.apple.dock autohide-delay -float 0;killall Dock
     defaults write com.apple.dock autohide-time-modifier -float 0;killall Dock
 
@@ -98,8 +98,11 @@ setup_osx_system()
     defaults write -g NSAutomaticWindowAnimationsEnabled -bool FALSE
 
     # See all files
-    defaults write com.apple.Finder AppleShowAllFiles YES
+    defaults write com.apple.Finder AppleShowAllFiles TRUE
+    killall Finder
 }
+
+
 
 setup_dir()
 {
@@ -138,4 +141,8 @@ setup_osx_system
 #setup_tmux
 #setup_zsh
 #setup_iterm
+
+git config --global user.name "FrancisJeon"
+git config --global user.email "jsw00827@gmail.com"
+git config --global alias 
 
