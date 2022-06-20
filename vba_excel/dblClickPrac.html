@@ -1,0 +1,16 @@
+<title>제목</title>
+
+<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $("#click").click(function() {
+        alert("click");
+      });
+      $("#dblclick").dblclick(function() {
+        alert("double click");
+      });
+    });
+</script>
+
+<button id="click">Click</button>
+<button id="dblclick" class="clickThis">doubleClick</button>
